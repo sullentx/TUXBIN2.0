@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../services/api.service';
-import { Person } from '../models/person';
+import { ApiService } from '../../services/api.service';
+import { Person } from '../../models/person';
 import { Router } from '@angular/router'; // Asegúrate de importar Router aquí
 
 @Component({

@@ -1,12 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, matDialogAnimations } from '@angular/material/dialog';
-import { Truck } from '../models/truck';
+import { Truck } from '../../models/truck';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatDialogContent } from '@angular/material/dialog';
 import { MatDialogActions } from '@angular/material/dialog';
-import { TruckService } from '../services/truck.service';
+import { TruckService } from '../../services/truck.service';
 @Component({
   selector: 'app-dialog-edit-truck',
   templateUrl: './dialog-edit-truck.component.html',

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ApiService } from '../services/api.service';
-import { Person, PersonLog } from '../models/person';
+import { ApiService } from '../../services/api.service';
+import { Person, PersonLog } from '../../models/person';
 import { Router } from '@angular/router'; 
 
 @Component({

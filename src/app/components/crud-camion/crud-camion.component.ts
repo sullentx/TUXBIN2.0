@@ -2,8 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
-import { TruckService } from '../services/truck.service';
-import { Truck } from '../models/truck';
+import { TruckService } from '../../services/truck.service';
+import { Truck } from '../../models/truck';
 
 @Component({
   selector: 'app-crud-camion',

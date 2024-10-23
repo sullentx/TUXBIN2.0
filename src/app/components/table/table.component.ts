@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { TruckService } from '../services/truck.service';
+import { TruckService } from '../../services/truck.service';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { Truck } from '../models/truck';
+import { Truck } from '../../models/truck';
 import { DialogEditTruckComponent } from '../dialog-edit-truck/dialog-edit-truck.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteTruckComponent } from '../dialog-delete-truck/dialog-delete-truck.component';
