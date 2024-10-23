@@ -1,0 +1,24 @@
+.full-width-table {
+  width: 100%;
+}
+.save-button {
+  background-color: #637b52; /* Color de fondo verde */
+  color: white;              /* Color del texto */
+  border: none;              /* Sin borde */
+  padding: 10px 15px;        /* Espaciado interno */
+  text-align: center;        /* Centra el texto */
+  text-decoration: none;     /* Sin subrayado */
+  display: inline-block;     /* Permite el margen */
+  margin: 4px 2px;          /* Margen alrededor del botón */
+  cursor: pointer;           /* Cambia el cursor al pasar el ratón */
+  border-radius: 4px;       /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.save-button:hover {
+  background-color: #45a049; /* Color de fondo al pasar el ratón */
+}
+
+.save-button:focus {
+  outline: none;             /* Sin contorno al hacer clic */
+}

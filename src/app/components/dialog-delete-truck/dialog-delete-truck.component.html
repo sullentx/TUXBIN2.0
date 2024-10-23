@@ -1,0 +1,8 @@
+<h2 mat-dialog-title class="dialog-title">Eliminar Camión</h2>
+<mat-dialog-content class="dialog-content">
+  <p>¿Está seguro de que desea eliminar el camión con matrícula <strong>{{ data.matricula }}</strong>?</p>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button class="cancel-button" (click)="onNoClick()">Cancelar</button>
+  <button mat-button color="warn" class="delete-button" (click)="onDelete()" cdkFocusInitial>Eliminar</button>
+</mat-dialog-actions>

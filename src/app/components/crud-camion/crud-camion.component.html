@@ -1,0 +1,23 @@
+<div class="div-form">
+    <form [formGroup]="camionForm" (ngSubmit)="onSubmit()"> 
+        <p>Agregar Camion</p>
+        <div class="div-matricula">
+            <label for="name">Matricula</label>
+            <input id="name" formControlName="matricula" placeholder="Matricula">
+        </div>
+
+        <div class="div-numSerie">
+            <label for="lastName">Numero de Serie</label>
+            <input id="lastName" formControlName="num_serie" placeholder="NUM-SERIE">
+        </div>
+
+        <div class="div-km">
+            <label for="age">Distancia Recorrida</label>
+            <input id="age" formControlName="distancia" placeholder="KM" type="number">
+        </div>
+
+        <div class="div-guardar">
+            <button class="btn-guardar" type="submit" [disabled]="camionForm.invalid">Guardar</button> 
+        </div>
+    </form>
+</div>

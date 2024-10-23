@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Modificar Camión</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Matrícula</mat-label>
+    <input matInput [(ngModel)]="data.matricula">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Número de Serie</mat-label>
+    <input matInput [(ngModel)]="data.num_serie">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Distancia Recorrida</mat-label>
+    <input matInput type="number" [(ngModel)]="data.routeTraveled">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div class="btns">
+    <button class="save-button" (click)="onCancel()">Cancelar</button>
+    <button class="save-button" (click)="onSave()" cdkFocusInitial>Guardar</button>
+  </div>
+</mat-dialog-actions>

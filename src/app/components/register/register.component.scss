@@ -1,0 +1,89 @@
+/* General form styles */
+.form-container {
+    width: 400px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+  
+  .form-container.hidden {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  
+
+.form-title h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    
+}
+
+input {
+    width: auto;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    position: relative;
+
+}
+
+input:focus {
+    border-color: #637b52;
+    outline: none;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.login-button {
+    background-color: #637b52;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+    background-color: #4e6f42;
+}
+
+.login-button:active {
+    transform: scale(0.98);
+}
+
+
+.go-button {
+    background: none;
+    border: none;
+    color: blue; /* Color similar a un enlace */
+    text-decoration: underline; /* Subrayado para parecer un enlace */
+    cursor: pointer; /* Cambia el cursor a una mano */
+    padding: 0; /* Sin relleno */
+}
+
+.go-button:hover {
+    text-decoration: none; /* Quita el subrayado al pasar el cursor */
+    color: darkblue; /* Cambia el color al pasar el cursor */
+}
