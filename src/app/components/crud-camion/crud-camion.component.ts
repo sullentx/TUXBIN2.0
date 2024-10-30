@@ -35,7 +35,6 @@ export class CrudCamionComponent {
         num_serie: formValues.num_serie,
         routeTraveled: formValues.distancia
       };
-
       this.truckService.postTruck(truck).subscribe({
         next: (response) => {
           console.log('Camión registrado con éxito:', response);

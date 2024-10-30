@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
-import { Person, PersonLog } from '../../models/person';
+import { PersonLog } from '../../models/person';
 import { Router } from '@angular/router'; 
 
 @Component({
@@ -33,8 +33,8 @@ export class FormLoginComponent {
       this.personService.postLogin(personlog).subscribe({
         next: (response) => {
           console.log('Inicio de sesión:', response);
-          localStorage.setItem('token', response.token); // Guarda el token
-          this.router.navigate(['/camiones']);
+          localStorage.setItem('token', response.token);
+          this.router.navigate(['/adminHome']);
         },
       });
     }

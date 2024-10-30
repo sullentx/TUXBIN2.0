@@ -6,6 +6,7 @@ import { FormLoginComponent } from "./components/form-login/form-login.component
 import { MainSectionCrudComponent } from "./components/main-section-crud/main-section-crud.component";
 import { MatTable } from '@angular/material/table';
 import { MainSectionTwoComponent } from './components/main-section-two/main-section-two.component';
+import { HomeAdminComponent } from './components/home-admin/home-admin.component';
 
 @Component({
     selector: 'app-root',
@@ -17,7 +18,8 @@ import { MainSectionTwoComponent } from './components/main-section-two/main-sect
         CrudCamionComponent,
         FormLoginComponent,
         MainSectionCrudComponent,
-        MatTable
+        MatTable,
+        HomeAdminComponent
     ],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'] 

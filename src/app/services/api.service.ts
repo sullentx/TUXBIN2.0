@@ -8,7 +8,7 @@ import { Person, PersonLog } from '../models/person';
 })
 export class ApiService {
 
-  private url: string = ' http://localhost:3000/'
+  private url: string = 'http://localhost:3000/'
  
 
   private headers = new HttpHeaders().set('Content-Type','application/json');

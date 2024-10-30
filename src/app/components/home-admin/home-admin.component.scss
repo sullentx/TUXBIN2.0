@@ -1,0 +1,215 @@
+
+.sign-up {
+    position: absolute;
+    top: 0;
+    width: 840px;
+    height: 850px;  
+    left: 980px;
+}
+
+.chris-lee-70l1tdai6rm-unsplash-icon {
+    border-radius: 25px 10px 0px 25px;
+    width: 80%;         /* Limita el ancho al contenedor */
+    height: 90%;
+    object-fit: cover;    /* Limita la altura al contenedor */
+}
+
+
+.menu {
+    position: absolute;
+    width: 95%;
+    left: 40px;
+    height: 750px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px 10px 0px 25px;
+    top: 120px;
+    overflow: hidden;
+}
+
+.puntos {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    display: flex;         /* Alinea el icono y el texto horizontalmente */
+    font-size: 36px;
+    gap: 20px;   
+    width: 425px;
+    height: 95px;
+    align-items: end;   
+    background-color: rgba(201, 224, 185, 1);
+    border-radius: 30px;
+    border: 1.4px solid rgba(0, 0, 0, 0.4); 
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.puntos-img {
+    width: 57px;
+    height: 63;   
+    padding-left: 20px;   
+    padding-top: 10px;
+    padding-bottom: 10px;  
+}
+
+.punto-recoleccion{ 
+    width: 57px;
+    height: 63;   
+    padding-left: 20px;   
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+
+.recoleccion-img {
+    width: 57px;
+    height: 63;   
+    padding-left: 5px;   
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+
+.punto-recoleccion{
+    position: absolute;
+    top: 180px;
+    left: 20px;
+    display: flex;       
+    gap: 10px;   
+    width: 430px;
+    height: 95px;
+    align-items: end;   
+    background-color: rgba(201, 224, 185, 1);
+    border-radius: 30px;
+    border: 1.4px solid rgba(0, 0, 0, 0.4); 
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.text{
+    position: relative;
+    font-size: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.notificaciones{
+    position: absolute;
+    top: 320px;
+    left: 20px;
+    display: flex;       
+    gap: 10px;   
+    width: 425px;
+    height: 95px;
+    align-items: end;   
+    background-color: rgba(201, 224, 185, 1);
+    border-radius: 30px;
+    border: 1.4px solid rgba(0, 0, 0, 0.4); 
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.notificaciones-img{
+    width: 57px;
+    height: 63;   
+    padding-left: 20px;   
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+
+.div-informacion{
+    position: absolute;
+    top: 450px;
+    left: 20px;
+    display: flex;       
+    gap: 10px;   
+    width: 425px;
+    height: 95px;
+    align-items: end;   
+    background-color: rgba(201, 224, 185, 1);
+    border-radius: 30px;
+    border: 1.4px solid rgba(0, 0, 0, 0.4); 
+    font-family: 'Poppins', sans-serif;
+}
+
+.informacion-img{
+    width: 57px;
+    height: 63;   
+    padding-left: 20px;   
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+
+.div-camion{
+    position: absolute;
+    top: 580px;
+    left: 20px;
+    display: flex;       
+    gap: 10px;   
+    width: 425px;
+    height: 95px;
+    align-items: end;   
+    background-color: rgba(201, 224, 185, 1);
+    border-radius: 30px;
+    border: 1.4px solid rgba(0, 0, 0, 0.4); 
+    font-family: 'Poppins', sans-serif;
+}
+
+.camion-img{
+    width: 57px;
+    height: 63;   
+    padding-left: 20px;   
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.admin{
+    position: relative;
+    top: 10px;
+    left: 50px;
+   
+}
+
+button.puntos, 
+button.punto-recoleccion, 
+button.notificaciones, 
+button.div-informacion, 
+button.div-camion {
+    width: 425px;        
+    height: 95px;        
+    display: flex;
+    align-items: center;
+    gap: 15px;           
+    padding: 10px;
+    background-color: rgba(201, 224, 185, 1);
+    border-radius: 30px;
+    border: 1.4px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;     
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+button .icon-img {
+    width: 57px;
+    height: 63px;
+    object-fit: contain; 
+}
+
+button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+button:focus {
+    background-color: rgba(99, 123, 82, 1);
+    box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.5);
+}
+
+button:active {
+    transform: scale(0.98);
+    background-color:rgb(24, 123, 45);
+}
+
+
