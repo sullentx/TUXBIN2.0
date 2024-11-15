@@ -6,6 +6,7 @@ import { HomeAdminComponent } from './components/home-admin/home-admin.component
 import { CrudNotificacionesComponent } from './components/crud-notificaciones/crud-notificaciones.component';
 import { SectionCrudNotificacionesComponent } from './components/section-crud-notificaciones/section-crud-notificaciones.component';
 import { SectionCrudInformacionComponent } from './components/section-crud-informacion/section-crud-informacion.component';
+import { SectionHomeComponent } from './components/section-home/section-home.component';
 
 export const routes: Routes = [
     { path: '', component: MainSectionTwoComponent }, 
@@ -15,4 +16,6 @@ export const routes: Routes = [
   { path: 'adminHome', component: HomeAdminComponent },
   { path: 'notificaciones', component: SectionCrudNotificacionesComponent },
   { path: 'informacion', component: SectionCrudInformacionComponent },
+  { path: 'home', component: SectionHomeComponent },
+
 ]
