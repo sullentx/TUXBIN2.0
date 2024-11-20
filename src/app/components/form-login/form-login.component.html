@@ -16,13 +16,16 @@
 
         <div class="form-group">
             <button class="login-button" type="submit">Iniciar Sesión</button>
+            @if (isLoading) {
+                <mat-progress-bar mode="query"></mat-progress-bar>
+            }   
         </div>
     </form>
 
     <div class="toggle-form">
         <p>
-            ¿Ya tienes cuenta?
-            <button (click)="navigateToLogin()" class="go-button">Inicia sesión aquí</button>
+            ¿No tienes cuenta?
+            <button (click)="navigateToLogin()" class="go-button">Crea tu cuenta aquí</button>
         </p>
     </div>
     

@@ -7,7 +7,7 @@ import { HeaderAdminComponent } from "../header-admin/header-admin.component";
 @Component({
   selector: 'app-home-admin',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, HeaderAdminComponent],
+  imports: [],
   templateUrl: './home-admin.component.html',
   styleUrl: './home-admin.component.scss'
 })
