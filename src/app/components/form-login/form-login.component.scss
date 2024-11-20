@@ -1,4 +1,3 @@
-/* General form styles */
 .form-container {
     width: 500px;
     max-width: 400px;
@@ -54,7 +53,7 @@ label {
 }
 
 .login-button {
-    background-color: rgba(190, 222, 185, 0.699);
+    background-color: rgba(255, 255, 255, 0.699);
     color: #000000;
     border: none;
     border-radius: 24px;
@@ -62,10 +61,12 @@ label {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 10px;
 }
 
 .login-button:hover {
-    background-color: #4e6f42;
+    background-color: #C9E0B9;
+    
 }
 
 .login-button:active {
@@ -75,13 +76,13 @@ label {
 .go-button {
     background: none;
     border: none;
-    color: blue; /* Color similar a un enlace */
-    text-decoration: underline; /* Subrayado para parecer un enlace */
+    color: rgb(0, 0, 0); /* Color similar a un enlace */
     cursor: pointer; /* Cambia el cursor a una mano */
     padding: 0; /* Sin relleno */
 }
 
 .go-button:hover {
     text-decoration: none; /* Quita el subrayado al pasar el cursor */
-    color: darkblue; /* Cambia el color al pasar el cursor */
+    color: #C9E0B9; /* Cambia el color al pasar el cursor */
 }
+

@@ -6,7 +6,7 @@ import { HeaderAdminComponent } from "../header-admin/header-admin.component";
 @Component({
   selector: 'app-section-crud-informacion',
   standalone: true,
-  imports: [HeaderComponent, CrudInformacionComponent, HeaderAdminComponent],
+  imports: [CrudInformacionComponent, HeaderAdminComponent],
   templateUrl: './section-crud-informacion.component.html',
   styleUrl: './section-crud-informacion.component.scss'
 })

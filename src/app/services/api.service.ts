@@ -1,29 +1,56 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Person, PersonLog } from '../models/person';
+import { LocalStorageService } from './localStorage.Service';
+
+interface LoginResponse {
+  access_token: string;
+  rol: number;
+  name: string;
+  id: string;
+  expires_at: number;  
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  
 
-  private url: string = 'http://localhost:3000/'
+  private url: string = 'http://127.0.0.1:8000'
  
-
+  
   private headers = new HttpHeaders().set('Content-Type','application/json');
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private localStorage:LocalStorageService) { }
 
     postPerson(person:Person):Observable <Person>  {
-      let urlPost = this.url + 'createUser'
+      let urlPost =`${this.url}/usuarios`;
       return this.http.post<Person>(`${urlPost}`, person, { headers: this.headers });
-
   }
+//En lugar de recibir parametro por paramemtro ppude haber hecho una interface para solo recibirlo comoo obejto
 
-  postLogin(person: PersonLog): Observable<{ token: string }> { 
-    let urlPost = `${this.url}log/login`;
-    return this.http.post<{ token: string }>(urlPost, person, { headers: this.headers });
-  }
+postLogin(person: PersonLog): Observable<LoginResponse> {
+  return this.http.post<LoginResponse>(`${this.url}/login`, person).pipe(
+    tap(response => {
+      if (response.access_token && response.expires_at) {
+        // Asegurarnos de que expires_at sea un número
+        const expirationTime = parseInt(response.expires_at.toString());
+        
+        console.log('Tiempo de expiración recibido:', expirationTime);
+        
+        // Guardar el token y la expiración
+        this.localStorage.setToken(response.access_token, expirationTime);
+        this.localStorage.setItem('rol', response.rol.toString());
+        this.localStorage.setItem('name', response.name);
+        this.localStorage.setItem('id', response.id);
+        
+        // Verificar que se guardó correctamente
+        console.log('Tiempo guardado:', this.localStorage.getItem('expires_at'));
+      }
+    })
+  );
+}
 
 }

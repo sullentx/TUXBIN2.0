@@ -1,22 +1,89 @@
-.chris-lee-70l1tdai6rm-unsplash-icon {
-    position: relative;
-    left: 985px;
-    border-radius: 25px 10px 0px 25px;
-    width: 681px;
-    height: 822px;
-    object-fit: cover;
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: row-reverse; // Esto pone la imagen a la derecha
+    
+    @media (max-width: 768px) {
+        flex-direction: column; // En móvil, imagen arriba y formulario abajo
+    }
 }
 
 .sign-up {
-    width: 100%;
-    position: absolute;
-    top: 76px;
-    background-color: #fff;
+    flex: 1;
+    position: relative;
     overflow: hidden;
+    
+    @media (max-width: 768px) {
+        height: 30vh;
+    }
+
+    .chris-lee-70l1tdai6rm-unsplash-icon {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        
+        @media (max-width: 768px) {
+            object-position: center top;
+        }
+    }
 }
 
-.form{
-    position: absolute;
-    top: 200px;
-    left: 100px;
+.form {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fff; // Asegura un fondo limpio para el formulario
+    
+    @media (max-width: 768px) {
+        padding: 1rem;
+        flex: none;
+    }
 }
+
+// Estilos para el header
+app-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+// Asegurarse de que el componente del formulario ocupe todo el espacio disponible
+app-form-login {
+    width: 100%;
+    max-width: 500px;
+}
+
+// Opcional: Añadir transiciones suaves
+.container {
+    * {
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+// Opcional: Mejoras visuales para pantallas más grandes
+@media (min-width: 1200px) {
+    .form {
+        padding: 3rem;
+    }
+    
+    .sign-up {
+        flex: 1.2; // Hace la imagen ligeramente más grande que el formulario
+    }
+}
+
+// Opcional: Ajuste para tablets en modo portrait
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sign-up {
+        height: 40vh;
+    }
+}   
