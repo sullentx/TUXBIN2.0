@@ -29,11 +29,17 @@
 	</div>
 
     <div class="div-notifiacion">
-        <button class="btn-iniciar">
+        <button class="btn-iniciar" (click)="openNotifications()">
             <img class="user" alt="Notificaciones" src="Vector.png">
             <span>Notificaciones</span>
+            <!-- Indicador de notificaciones -->
+             @if (hasNotifications) {
+                <div class="notification-badge"></div> <!-- Badge solo si hay notificaciones -->
+             }
         </button>
-	</div>
+    </div>
+    
+    
 	
 	<div class="div-mapa">
         <button class="btn-mapa">

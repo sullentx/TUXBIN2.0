@@ -104,4 +104,10 @@ export class LocalStorageService {
   setItem(key: string, value: string): void {
     localStorage.setItem(key, value);
   }
+  getItemId(key: string): number | null {
+    const value = localStorage.getItem(key);
+    return value ? parseInt(value, 10) : null;  // Convertir la cadena a número
+  }
+  
+
 }

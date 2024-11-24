@@ -8,6 +8,7 @@ import { SectionCrudInformacionComponent } from './components/section-crud-infor
 import { SectionHomeComponent } from './components/section-home/section-home.component';
 import { SectionNosotrosComponent } from './components/section-nosotros/section-nosotros.component';
 import { AuthGuard } from './components/custom/auth.guard';
+import { ContentPageComponent } from './components/content-page/content-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, 
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'informacion', component: SectionCrudInformacionComponent, canActivate: [AuthGuard] },
   { path: 'home', component: SectionHomeComponent, canActivate: [AuthGuard] },
   { path: 'somosTuxbin', component: SectionNosotrosComponent, canActivate: [AuthGuard] },
+  { path: 'TuxBinInformate', component:ContentPageComponent , canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'login' } 
 ];
 
