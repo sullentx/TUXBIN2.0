@@ -46,7 +46,6 @@ export class FormLoginComponent {
         this.personService.postLogin(personlog).subscribe({
           next: () => {
             console.log(this.local.hasToken())
-            const token = this.local.getToken();
             const rol= this.local.getItem('rol')
             if(rol == '1'){
               this.router.navigate(['/adminHome']);

@@ -73,3 +73,15 @@ span {
     right: 180px;
 }
 
+
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4a6b3e;
+
+    border: 2px solid white; /* Borde blanco para darle un efecto de resplandor */
+}

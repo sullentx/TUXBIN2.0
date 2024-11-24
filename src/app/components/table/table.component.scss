@@ -1,24 +1,64 @@
-.full-width-table {
-  width: 100%;
+.mat-elevation-z2 {
+  overflow-x: auto; /* Habilita desplazamiento horizontal para dispositivos pequeños */
+  padding: 16px; /* Espaciado interno */
+  margin: 0 auto; /* Centra la tabla */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
 }
+
+.full-width-table {
+  width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
+  border-collapse: collapse; /* Elimina espacios entre celdas */
+}
+
+.full-width-table th, 
+.full-width-table td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ddd; /* Líneas de separación */
+  white-space: nowrap; /* Evita saltos de línea en el contenido */
+}
+
+.full-width-table th {
+  background-color: #637b52; /* Fondo para encabezados */
+  color: white; /* Texto blanco */
+}
+
+.full-width-table tbody tr:hover {
+  background-color: #f1f1f1; /* Fondo al pasar el ratón */
+}
+
 .save-button {
-  background-color: #637b52; /* Color de fondo verde */
-  color: white;              /* Color del texto */
-  border: none;              /* Sin borde */
-  padding: 10px 15px;        /* Espaciado interno */
-  text-align: center;        /* Centra el texto */
-  text-decoration: none;     /* Sin subrayado */
-  display: inline-block;     /* Permite el margen */
-  margin: 4px 2px;          /* Margen alrededor del botón */
-  cursor: pointer;           /* Cambia el cursor al pasar el ratón */
-  border-radius: 4px;       /* Bordes redondeados */
-  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  background-color: #637b52;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 2px;
+  transition: background-color 0.3s ease;
 }
 
 .save-button:hover {
-  background-color: #45a049; /* Color de fondo al pasar el ratón */
+  background-color: #45a049;
 }
 
-.save-button:focus {
-  outline: none;             /* Sin contorno al hacer clic */
+mat-paginator {
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Responsividad: Ajustes en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .full-width-table th, 
+  .full-width-table td {
+      padding: 8px;
+      font-size: 12px; /* Reduce tamaño de fuente */
+  }
+
+  .save-button {
+      font-size: 10px;
+      padding: 6px;
+  }
+
+ 
 }

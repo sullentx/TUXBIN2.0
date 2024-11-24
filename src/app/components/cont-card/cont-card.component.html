@@ -1,0 +1,16 @@
+<div class="card-container">
+  @for (item of items; track $index) {
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">{{ item.titulo }}</h2>
+      </div>
+      <div class="card-image">
+        <img [src]="item.path_imagen" [alt]="item.titulo">
+      </div>
+      <div class="card-content">
+        <!-- Limitar el contenido a 255 caracteres y agregar "..." si es necesario -->
+        <p class="card-description">{{ item.contenido | slice:0:255 }}{{ item.contenido.length > 255 ? '...' : '' }}</p>
+      </div>
+    </div>
+  }
+</div>

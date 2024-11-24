@@ -1,10 +1,13 @@
-<h2 mat-dialog-title>Detalles del Camión</h2>
-    <mat-dialog-content>
-      <p>ID: {{ data.id }}</p>
-      <p>Matrícula: {{ data.matricula }}</p>
-      <p>Número de Serie: {{ data.num_serie }}</p>
-      <p>Distancia Recorrida: {{ data.routeTraveled }} km</p>
-    </mat-dialog-content>
-    <mat-dialog-actions>
-      <button mat-button (click)="onNoClick()">Cerrar</button>
-    </mat-dialog-actions>
+<div class="dialog-container">
+  <h2 mat-dialog-title> Detalles del Camión </h2>
+  <mat-dialog-content>
+    <div class="dialog-content">
+      <p><strong>ID:</strong> {{ data.id }}</p>
+      <p><strong>Matrícula:</strong> {{ data.matricula }}</p>
+      <p><strong>Número de Serie:</strong> {{ data.numero_unidad }}</p>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button  (click)="onNoClick()">Cerrar</button>
+  </mat-dialog-actions>
+</div>

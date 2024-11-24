@@ -86,3 +86,22 @@ label {
     color: #C9E0B9; /* Cambia el color al pasar el cursor */
 }
 
+.password-container {
+    position: relative;
+}
+
+.password-container button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.caps-lock-warning {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
