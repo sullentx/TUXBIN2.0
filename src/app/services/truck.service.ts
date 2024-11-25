@@ -36,12 +36,10 @@ export class TruckService {
       const newTruck = await firstValueFrom(
         this.http.post<Truck>(urlPost, truck, { headers: this.headers })
       );
-      console.log('Truck created successfully:', newTruck);  // Log para verificar la respuesta
       this.store.addTruck(newTruck);
       this.store.setError(null);
     } catch (error) {
       this.store.setError('Error al crear el camión');
-      console.error('Error en la creación del camión:', error);  // Log detallado del error
     } finally {
       this.store.setLoading(false);
     }

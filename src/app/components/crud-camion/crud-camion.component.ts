@@ -48,7 +48,6 @@ onSubmit() {
       this.isLoading = false; // Desactiva el estado de carga
 
       // Mostrar notificación de éxito
-      console.log('chuchuu',truck)
       this.snackBar.open('Camión registrado con éxito', 'Cerrar', {
         duration: 3000,
       });
@@ -56,7 +55,6 @@ onSubmit() {
       this.truckAdded.emit();
       this.camionForm.reset();
     }).catch((error) => {
-      console.error('Error al registrar el camión:', error);
       this.snackBar.open('Error al registrar el camión. Intenta nuevamente.', 'Cerrar', {
         duration: 3000,
       });
@@ -64,7 +62,6 @@ onSubmit() {
       this.isLoading = false;
     });
   } else {
-    console.log('Formulario inválido');
 
     // Mostrar notificación de formulario inválido
     this.snackBar.open('Por favor, completa el formulario correctamente.', 'Cerrar', {

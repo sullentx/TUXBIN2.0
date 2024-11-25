@@ -23,10 +23,8 @@ export class ContCardComponent implements OnInit {
     this.materialService.getAllMaterials().subscribe({
       next: (materials) => {
         this.items = materials; // Asigna los materiales recibidos a la lista
-        console.log('Materiales cargados:', materials);
       },
       error: (err) => {
-        console.error('Error al cargar materiales:', err);
       }
     });
   }
@@ -34,6 +32,5 @@ export class ContCardComponent implements OnInit {
   // Método para recibir el material creado desde el componente hijo
   onMaterialCreated(newMaterial: Material): void {
     this.items.push(newMaterial); // Agregar el nuevo material a la lista de 
-    console.log('cargandoo')
   }
 }

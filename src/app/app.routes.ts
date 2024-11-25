@@ -12,21 +12,30 @@ import { ContentPageComponent } from './components/content-page/content-page.com
 import { MapComponent } from './components/map/map.component';
 import { MapUserComponent } from './components/map-user/map-user.component';
 import { RutasComponent } from './components/rutas/rutas.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
+import { ShowNotificationComponent } from './components/show-notification/show-notification.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, 
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, 
   { path: 'register', component: MainSectionTwoComponent }, 
   { path: 'login', component: MainSectionComponent }, 
   { path: 'camiones', component: MainSectionCrudComponent, canActivate: [AuthGuard] }, 
   { path: 'adminHome', component: HomeAdminComponent, canActivate: [AuthGuard] },
   { path: 'notificaciones', component: SectionCrudNotificacionesComponent, canActivate: [AuthGuard] },
-  { path: 'informacion', component: SectionCrudInformacionComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: SectionHomeComponent, canActivate: [AuthGuard] },
+  { path: 'informacion', component: SectionCrudInformacionComponent },
+  { path: 'home', component: SectionHomeComponent },
   { path: 'somosTuxbin', component: SectionNosotrosComponent, canActivate: [AuthGuard] },
-  { path: 'TuxBinInformate', component:ContentPageComponent , canActivate: [AuthGuard] },
+  { path: 'TuxBinInformate', component:ContentPageComponent },
   { path: 'TuxMapaAdmin', component:MapComponent, canActivate: [AuthGuard],},
   { path: 'TuxMapa', component:MapUserComponent, canActivate: [AuthGuard],},
   { path: 'TuxRutas', component:RutasComponent, canActivate: [AuthGuard],},
+  {path:'ASDASDADASDASDASD12', component: HeaderComponent, canActivate: [AuthGuard] },
+  { path: 'ASDASDADASDASDASD12',component: HeaderAdminComponent, canActivate: [AuthGuard] },
+  { path: 'ASDASDADASDASDASD12',component: ShowNotificationComponent, canActivate: [AuthGuard] },
+
+
+
 
 
   { path: '**', redirectTo: 'login' } 

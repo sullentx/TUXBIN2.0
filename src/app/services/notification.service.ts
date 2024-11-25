@@ -13,14 +13,11 @@ export class NotificationService {
   constructor(private http: HttpClient) {}
 
   createNotification(notification: Notification): Observable<Notification> {
-    console.log('Datos enviados al backend:', notification);
   
     return this.http.post<Notification>(this.apiUrl, notification).pipe(
       tap((response) => {
-        console.log('Respuesta del backend:', response);
       }),
       catchError((error) => {
-        console.error('Error detectado en la solicitud HTTP:', error);
         return throwError(() => error);
       })
     );

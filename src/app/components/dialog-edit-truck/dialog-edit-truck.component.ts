@@ -37,7 +37,6 @@ export class DialogEditTruckComponent {
       });
       this.dialogRef.close(); // Cerrar el diálogo después de guardar
     } catch (error) {
-      console.error('Error al actualizar el camión:', error);
     }
   }
 

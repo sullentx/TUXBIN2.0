@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotificationService } from '../../services/notification.service';
 import { LocalStorageService } from '../../services/localStorage.Service';
 import { ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsModule
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-crud-notificaciones',
@@ -22,6 +23,7 @@ export class CrudNotificacionesComponent {
     public dialogRef: MatDialogRef<CrudNotificacionesComponent>,
     private notificationService:NotificationService,
     private localStorage: LocalStorageService,
+    private snackBar:MatSnackBar
   ) {
     this.notificationForm = this.fb.group({
       titulo: ['', Validators.required], // Requiere un valor no vacío
@@ -35,7 +37,6 @@ export class CrudNotificacionesComponent {
     const id_user = this.localStorage.getItem('id');
     const name = this.localStorage.getItem('name');
   
-    console.log('Formulario es válido:', this.notificationForm.valid); // Añadido para ver el estado del formulario
   
     if (this.notificationForm.valid) {
       const formValue = this.notificationForm.value;
@@ -47,20 +48,22 @@ export class CrudNotificacionesComponent {
         id_usuario: id_user,
       };
   
-      console.log('Datos a enviar:', notification); // Log importante
   
       this.notificationService.createNotification(notification).subscribe({
         next: (response) => {
-          console.log('Notificación creada exitosamente:', response);
+          this.snackBar.open('Notifiacion Creada Exitosamente', 'Cerrar', {
+            duration: 2000,
+          });
           this.dialogRef.close(response); 
+
         },
         error: (err) => {
-          console.error('Error al guardar la notificación:', err);
         },
       });
     } else {
-      console.warn('Formulario inválido:', this.notificationForm.errors); // Muestra los errores del formulario
-    }
+      this.snackBar.open('Por favor rellene todo los campos', 'Cerrar', {
+        duration: 2000,
+      });}
   }
   
   

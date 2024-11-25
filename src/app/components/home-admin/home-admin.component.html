@@ -1,19 +1,19 @@
 
 <div class="admin-dashboard">
-
+  <app-header-admin></app-header-admin>
       <div class="dashboard-container">
         <div class="sidebar">
           <div class="logo-section">
             <img src="TUXBIN.png" alt="Logo" class="logo">
           </div>
           
-          <nav class="nav-menu">
-            <button class="nav-item active">
+          <nav class="nav-menu" >
+            <button class="nav-item active" (click)="rutas()">
               <img src="puntos.png" alt="Rutas">
               <span>Rutas</span>
             </button>
     
-            <button class="nav-item">
+            <button class="nav-item" (click)="irPuntos()">
               <img src="recoleccion.png" alt="Puntos de Recolección">
               <span>Puntos de Recolección</span>
             </button>
@@ -46,11 +46,11 @@
             <div class="stats-cards">
               <div class="stat-card">
                 <h3>Total Rutas</h3>
-                <p class="stat-number">24</p>
+                <p class="stat-number">{{rutaCount.length}}</p>
               </div>
               <div class="stat-card">
                 <h3>Puntos Activos</h3>
-                <p class="stat-number">128</p>
+                <p class="stat-number">{{puntoCount.length}}</p>
               </div>
               <div class="stat-card">
                 <h3>Camiones</h3>
@@ -58,11 +58,11 @@
               </div>
             </div>
           </div>
-          
           <div class="content-area">
             <!-- Aquí irá el contenido específico de cada vista -->
             <img class="dashboard-image" src="chris-lee-70l1tDAI6rM-unsplash 1.png" alt="Dashboard Image">
           </div>
+      
         </main>
       </div>
     </div>

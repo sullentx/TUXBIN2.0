@@ -3,10 +3,10 @@ import * as mapboxgl from 'mapbox-gl';
 import { PuntoRecoleccionService } from '../../services/PuntoRecoleccion.Service';
 import { RutaService } from '../../services/Rutas.service';
 import PuntoRecoleccion from '../../models/puntoRecoleccion';
-import { UpperCasePipe } from '@angular/common';
 import { LocationService } from '../../services/interceptor/Geolocalizacion.interceptor';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UpperCasePipe } from '@angular/common';
 @Component({
   selector: 'app-rutas',
   standalone: true,
@@ -103,7 +103,7 @@ ngOnInit(): void {
   // Trazar la ruta con los puntos seleccionados
   async drawRoute(): Promise<void> {
     if (this.selectedPoints.length < 2) {
-      console.error('Se necesitan al menos dos puntos para trazar una ruta');
+      this.snackBar.open('Se necesitan dos puntos para trazar una ruta', 'Cerrar'),3000
       return;
     }
   
@@ -172,7 +172,8 @@ ngOnInit(): void {
         this.routeCoordinates = route.coordinates; // Asigna las coordenadas de la ruta
       }
     } catch (error) {
-      console.error('Error al obtener la ruta:', error);
+      this.snackBar.open('Ocurrio un error intenta de nuevo', 'Cerrar', { duration: 3000 });
+
     }
   }
   
@@ -228,7 +229,7 @@ ngOnInit(): void {
 
   saveRoute(): void {
     if (this.routeCoordinates.length === 0) {
-      console.error('No hay una ruta generada para guardar');
+      this.snackBar.open('No hay ruta para guardar', 'Cerrar', { duration: 3000 });
       return;
     }
   
@@ -239,11 +240,9 @@ ngOnInit(): void {
   
     this.rutaService.createRuta(rutaData).subscribe({
       next: () => {
-        console.log('Ruta creada exitosamente');
         this.snackBar.open('Ruta guardada exitosamente', 'Cerrar', { duration: 3000 });
       },
       error: (err) => {
-        console.error('Error al crear la ruta:', err);
         this.snackBar.open('Error al guardar la ruta', 'Cerrar', { duration: 3000 });
       }
     });
@@ -263,7 +262,7 @@ ngOnInit(): void {
         this.routeCoordinates = []; // Limpiar las coordenadas actuales de la ruta
       }
   
-      console.log(`Punto ${punto.colonia} eliminado de la ruta`);
+      this.snackBar.open(`Punto Eliminado de la lista, ${punto.colonia.toUpperCase()}`, 'Cerrar', { duration: 3000 });
     }
   }
   

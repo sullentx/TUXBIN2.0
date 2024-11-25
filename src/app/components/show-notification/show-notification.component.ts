@@ -30,7 +30,6 @@ export class ShowNotificationComponent implements OnInit{
         this.notifications = data;  // Aquí cargamos las notificaciones
       },
       error: (err) => {
-        console.error('Error al obtener notificaciones:', err);
       }
     });
   }
