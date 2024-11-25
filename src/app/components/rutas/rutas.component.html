@@ -1,0 +1,105 @@
+<div class="container">
+  <!-- Panel lateral izquierdo -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Puntos de Recolección</h2>
+    <input 
+  type="text" 
+  [(ngModel)]="searchTerm" 
+  (ngModelChange)="filterPuntos()"
+  placeholder="Buscar punto..."
+  class="search-input"
+/>  </div>
+      @if (selectedPoints.length > 0) {
+        <div class="selected-points-summary">
+          <p>Puntos seleccionados: {{ selectedPoints.length }}</p>
+          <button 
+            class="btn-clear" 
+            (click)="clearSelection()">
+            Limpiar selección
+          </button>
+        </div>
+      }
+   
+
+    <div class="puntos-list">
+      @for (punto of puntosFiltrados; track punto.id) {
+        <div 
+          class="punto-card" 
+          [class.selected]="isSelected(punto)"
+          (click)="selectPointForRoute(punto)"
+        >
+          <div class="card-header">
+            <h3>📍 {{ punto.colonia | uppercase }}</h3>
+            <span class="selection-indicator">
+              {{ isSelected(punto) ? '✓' : '' }}
+            </span>
+          </div>
+          <div class="card-body">
+            <p><span>📮 CP:</span> {{ punto.cp }}</p>
+            <p><span>🏠 Calle:</span> {{ punto.calle | uppercase }}</p>
+            <small class="punto-id">ID: {{ punto.id }}</small>
+          </div>
+        </div>
+      }
+      @empty {
+        <div class="no-results">
+          <p>No se encontraron puntos de recolección</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Contenedor principal del mapa -->
+  <div class="main-content">
+    <div class="map-container">
+      <div #mapDiv class="map"></div>
+      
+      <!-- Controles del mapa -->
+      <div class="map-controls">
+        <button 
+          class="btn-route" 
+          (click)="drawRoute()"
+          [disabled]="selectedPoints.length < 2"
+        >
+          <span class="icon">🛣️</span>
+          Trazar Ruta
+        </button>
+        
+        <button 
+          class="btn-save" 
+          (click)="saveRoute()"
+          [disabled]="!routeDrawn">
+          <span class="icon">💾</span>
+          Guardar Ruta
+        </button>
+      </div>
+
+      <!-- Estado de la ruta -->
+       @if (selectedPoints.length > 0) {
+        <div class="route-status" >
+          <div class="status-header">
+            <h4>Ruta Actual</h4>
+            <span class="point-count">
+              {{ selectedPoints.length }} puntos seleccionados
+            </span>
+          </div>
+          <div class="selected-points-list">
+            @for (punto of selectedPoints; track punto.id; let i = $index) {
+              <div class="route-point">
+                <span class="point-number">{{ i + 1 }}</span>
+                <span class="point-name">{{ punto.colonia | uppercase}}</span>
+                <button 
+                  class="btn-remove" 
+                  (click)="removePoint(punto)">
+                  ✕
+                </button>
+              </div>
+            }
+          </div>
+        </div>
+       }
+   
+    </div>
+  </div>
+</div>

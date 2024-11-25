@@ -1,215 +1,250 @@
+// Variables
+$primary-color: #2C7A51;
+$secondary-color: #C9E0B9;
+$text-color: #333333;
+$background-color: #F5F7FA;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+$border-radius: 12px;
 
-.sign-up {
-    position: absolute;
-    top: 0;
-    width: 840px;
-    height: 850px;  
-    left: 980px;
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.chris-lee-70l1tdai6rm-unsplash-icon {
-    border-radius: 25px 10px 0px 25px;
-    width: 80%;         /* Limita el ancho al contenedor */
-    height: 90%;
-    object-fit: cover;    /* Limita la altura al contenedor */
+@mixin card-style {
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 6px $shadow-color;
+  padding: 1.5rem;
 }
 
-
-.menu {
-    position: absolute;
-    width: 95%;
-    left: 40px;
-    height: 750px;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25px 10px 0px 25px;
-    top: 120px;
-    overflow: hidden;
+// Main Styles
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: $background-color;
+  font-family: 'Poppins', sans-serif;
+  scrollbar-width: none;
 }
 
-.puntos {
-    position: absolute;
-    top: 50px;
-    left: 20px;
-    display: flex;         /* Alinea el icono y el texto horizontalmente */
-    font-size: 36px;
-    gap: 20px;   
-    width: 425px;
-    height: 95px;
-    align-items: end;   
-    background-color: rgba(201, 224, 185, 1);
-    border-radius: 30px;
-    border: 1.4px solid rgba(0, 0, 0, 0.4); 
-    font-family: 'Poppins', sans-serif;
-
+.dashboard-container {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
-.puntos-img {
-    width: 57px;
-    height: 63;   
-    padding-left: 20px;   
-    padding-top: 10px;
-    padding-bottom: 10px;  
+// Sidebar Styles
+.sidebar {
+  width: 280px;
+  background: white;
+  border-radius: $border-radius;
+  padding: 1.5rem;
+  height: calc(100vh - 2rem);
+  position: sticky;
+  top: 1rem;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
 }
 
-.punto-recoleccion{ 
-    width: 57px;
-    height: 63;   
-    padding-left: 20px;   
-    padding-top: 10px;
-    padding-bottom: 10px; 
+.logo-section {
+  @include flex-center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  
+  .logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: $primary-color;
+  }
 }
 
-.recoleccion-img {
-    width: 57px;
-    height: 63;   
-    padding-left: 5px;   
-    padding-top: 10px;
-    padding-bottom: 10px; 
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.punto-recoleccion{
-    position: absolute;
-    top: 180px;
-    left: 20px;
-    display: flex;       
-    gap: 10px;   
-    width: 430px;
-    height: 95px;
-    align-items: end;   
-    background-color: rgba(201, 224, 185, 1);
-    border-radius: 30px;
-    border: 1.4px solid rgba(0, 0, 0, 0.4); 
-    font-family: 'Poppins', sans-serif;
-    
-}
-
-.text{
-    position: relative;
-    font-size: 30px;
-    text-overflow: ellipsis;
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: none;
+  background: transparent;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: $transition;
+  width: 100%;
+  text-align: left;
+  color: $text-color;
+  
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  span {
+    font-size: 1rem;
     white-space: nowrap;
-
-}
-
-.notificaciones{
-    position: absolute;
-    top: 320px;
-    left: 20px;
-    display: flex;       
-    gap: 10px;   
-    width: 425px;
-    height: 95px;
-    align-items: end;   
-    background-color: rgba(201, 224, 185, 1);
-    border-radius: 30px;
-    border: 1.4px solid rgba(0, 0, 0, 0.4); 
-    font-family: 'Poppins', sans-serif;
-    
-}
-
-.notificaciones-img{
-    width: 57px;
-    height: 63;   
-    padding-left: 20px;   
-    padding-top: 10px;
-    padding-bottom: 10px; 
-}
-
-.div-informacion{
-    position: absolute;
-    top: 450px;
-    left: 20px;
-    display: flex;       
-    gap: 10px;   
-    width: 425px;
-    height: 95px;
-    align-items: end;   
-    background-color: rgba(201, 224, 185, 1);
-    border-radius: 30px;
-    border: 1.4px solid rgba(0, 0, 0, 0.4); 
-    font-family: 'Poppins', sans-serif;
-}
-
-.informacion-img{
-    width: 57px;
-    height: 63;   
-    padding-left: 20px;   
-    padding-top: 10px;
-    padding-bottom: 10px; 
-}
-
-.div-camion{
-    position: absolute;
-    top: 580px;
-    left: 20px;
-    display: flex;       
-    gap: 10px;   
-    width: 425px;
-    height: 95px;
-    align-items: end;   
-    background-color: rgba(201, 224, 185, 1);
-    border-radius: 30px;
-    border: 1.4px solid rgba(0, 0, 0, 0.4); 
-    font-family: 'Poppins', sans-serif;
-}
-
-.camion-img{
-    width: 57px;
-    height: 63;   
-    padding-left: 20px;   
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.admin{
-    position: relative;
-    top: 10px;
-    left: 50px;
-   
-}
-
-button.puntos, 
-button.punto-recoleccion, 
-button.notificaciones, 
-button.div-informacion, 
-button.div-camion {
-    width: 425px;        
-    height: 95px;        
-    display: flex;
-    align-items: center;
-    gap: 15px;           
-    padding: 10px;
-    background-color: rgba(201, 224, 185, 1);
-    border-radius: 30px;
-    border: 1.4px solid rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;     
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+  }
+  
+  &:hover {
+    background: transparentize($secondary-color, 0.7);
+  }
+  
+  &.active {
+    background: $secondary-color;
+    color: $primary-color;
+    font-weight: 600;
+  }
 }
 
-button .icon-img {
-    width: 57px;
-    height: 63px;
-    object-fit: contain; 
+.icon-with-badge {
+  position: relative;
+  
+  .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #FF4B4B;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.75rem;
+    @include flex-center;
+  }
 }
 
-button:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.05);
+// Main Content Styles
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-button:focus {
-    background-color: rgba(99, 123, 82, 1);
-    box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.5);
+.welcome-section {
+  @include card-style;
+  .welcome-text {
+    margin-bottom: 2rem;
+    
+    h1 {
+      font-size: 2rem;
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+      
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+    }
+    
+    p {
+      color: lighten($text-color, 20%);
+    }
+  }
 }
 
-button:active {
-    transform: scale(0.98);
-    background-color:rgb(24, 123, 45);
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
+.stat-card {
+  @include card-style;
+  text-align: center;
+  
+  h3 {
+    font-size: 1rem;
+    color: lighten($text-color, 20%);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $primary-color;
+  }
+}
 
+.content-area {
+  @include card-style;
+  min-height: 400px;
+  
+  .dashboard-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1024px) {
+  .stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .nav-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: $secondary-color;
+      border-radius: 4px;
+    }
+  }
+  
+  .nav-item {
+    flex-shrink: 0;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-item span {
+    display: none;
+  }
+  
+  .nav-item {
+    padding: 0.75rem;
+  }
+}

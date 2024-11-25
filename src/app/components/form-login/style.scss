@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+
+$light-theme: mat.define-theme();
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark
+  )
+));
+
+mat-progress-bar {
+  // Override the colors to create a dark sidenav.
+  @include mat.all-component-colors($dark-theme);
+}
+

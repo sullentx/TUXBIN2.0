@@ -1,91 +1,191 @@
-.header {
-    position: relative; 
-    width: 100%;
-    height: 72px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-}
-
-button {
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-button:hover {
-    background-color: #4a6b3e;
-    transform: scale(1.05);
-}
-
-button img {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
-}
-
-span {
-    color: rgb(0, 0, 0);
-    font-weight: 500;
-}
-
-
-.div-iniciar {
-    position: absolute;
-    top: 10px; 
-    right: 20px; 
-}
-
-.div-registro {
-    position: absolute;
-    top: 10px;
-    right: 210px; 
-}
-
-.div-home {
-    position: absolute;
-    top: 10px;
-    left: 20px; 
-}
-
-.div-mapa {
-    position: absolute;
-    top: 10px;
-    right: 350px 
-    
-}
-
-.div-notifiacion {
-    position: absolute;
-    top: 10px;
-    right: 460px     
-}
-
-.line-div {
-    position: absolute;
-    border-right: 1.5px solid #000;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    height: 55px;
-    top: 10px;
-    right: 180px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 69px;
 }
 
 img{
     object-fit: contain;
 }
 
-.div-camion{
-    position: absolute;
-    top: 10px;
-    right: 620px     
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
 }
 
-.div-informacion{
+.menu ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center;
+}
+
+.btn-iniciar {
+    position: relative;
+}
+
+@media (min-width: 769px) {
+    .btn-iniciar::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        height: 24px;
+        width: 1px;
+        background-color: #ccc;
+    }
+}
+
+.menu ul li button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.menu ul li button img {
+    width: 24px;
+    height: 24px;
+}
+
+.menu ul li button:hover {
+    color: #4a6b3e;
+}
+
+.btn-home {
     position: absolute;
     top: 10px;
-    right: 760px     
+    left: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.btn-iniciar img,
+.btn-registro img,
+.btn-home img,
+.btn-mapa img {
+    width: 20px;
+    height: 20px;
+}
+
+.line-div {
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 10px;
+}
+
+.menu-icono {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+}
+
+.menu .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    padding: 0;
+}
+
+#menu:checked ~ .navbar {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .menu-icono {
+        display: block;
+    }
+
+    .menu .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .menu ul {
+        width: 100%;
+        flex-direction: column;
+        align-items: center; // Centra los elementos horizontalmente
+        padding: 20px 0; // Padding arriba y abajo
+        margin: 0;
+        gap: 0; // Quitamos el gap para manejarlo con padding en los li
+    }
+
+    .menu ul li {
+        width: 100%;
+        display: flex;
+        justify-content: center; // Centra el botón horizontalmente
+        padding: 15px 20px; // Padding uniforme arriba y abajo
+        border-bottom: 1px solid #eee; // Línea divisoria sutil
+    }
+
+    .menu ul li:last-child {
+        border-bottom: none; // Quita la línea del último elemento
+    }
+
+    .menu ul li button {
+        width: auto; // El botón toma el ancho de su contenido
+        padding: 0;
+        justify-content: center;
+        gap: 10px; // Espacio entre icono y texto
+    }
+
+    .btn-home {
+        position: static;
+        width: 100%;
+        justify-content: center;
+        padding: 15px 20px; // Mismo padding que los otros elementos
+    }
+
+    #menu:checked ~ .navbar {
+        display: block;
+    }
+
+    .btn-iniciar::before {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    #menu {
+        display: none;
+    }
 }

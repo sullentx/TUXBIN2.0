@@ -1,0 +1,67 @@
+.dialog-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #2C7A51;
+    margin-bottom: 20px; 
+  }
+  
+  .dialog-content {
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 20px; 
+  }
+  
+  .notification-item {
+    margin-bottom: 20px; 
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .notification-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #2C7A51;
+  }
+  
+  .notification-item p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .notification-item small {
+    font-size: 0.8rem;
+    color: #777;
+  }
+  
+  .no-notifications {
+    text-align: center;
+    color: #888;
+    font-size: 1.1rem;
+  }
+  
+  .btn-close {
+    background-color: rgba(255, 255, 255, 0.699);
+    color: #2C7A51;
+    border-radius: 24px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 15px; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    border: none;
+  }
+  
+  .btn-close:hover {
+    background-color: #C9E0B9;
+    transform: scale(1.05);
+  }
+  
+  mat-dialog-actions {
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,72 @@
+<div><app-header></app-header></div>
+<div class="container">
+  <div class="map-container">
+    <!-- Mapa -->
+    <div #mapDiv class="map"></div>
+
+    <!-- Panel lateral -->
+    <div class="side-panel">
+      <!-- Lista de puntos -->
+      <div class="punto-lista-container">
+        <div class="panel-header">
+          <h2>Puntos de Recolección</h2>
+        </div>
+        <app-punto-lista [puntos]="puntosGuardados"></app-punto-lista>
+      </div>
+
+      <!-- Leyenda -->
+      <div class="legend">
+        
+
+        @if (rutas.length > 0) {
+          <div class="routes-section">
+            <div class="routes-header">
+              <h3>Seleccionar una ruta</h3>
+          
+            </div>
+            <div class="routes-list">
+              @for (ruta of rutas; track $index) {
+                <div
+               
+                class="route-item" 
+                [class.active]="rutaSeleccionada?.id === ruta.id"
+                (click)="seleccionarRuta(ruta)"
+              >
+                <div class="route-info">
+                  <span class="route-id">Ruta {{ ruta.id}}</span>
+                  <span class="route-name">{{ ruta.nombre_de_ruta}}</span>
+                </div>
+                <div class="route-actions">
+                  <button 
+                    class="view-route-btn"
+                    (click)="$event.stopPropagation(); verDetallesRuta(ruta)"
+                  >
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+              }
+             
+            </div>
+            
+          </div>
+        }
+
+        <div class="legend-header">
+          <h3>Días de Recolección</h3>
+        </div>
+        <div class="legend-content">
+          @for (dia of diasSemana; track $index) {
+              <div class="legend-item">
+                  <div class="legend-color-container">
+                    <div class="legend-color" [style.background-color]="dia.color"></div>
+                  </div>
+                  <span class="legend-text">{{ dia.nombre }}</span>
+              </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

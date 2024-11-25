@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CrudNotificacionesComponent } from './crud-notificaciones.component';
 
+
 describe('CrudNotificacionesComponent', () => {
   let component: CrudNotificacionesComponent;
   let fixture: ComponentFixture<CrudNotificacionesComponent>;

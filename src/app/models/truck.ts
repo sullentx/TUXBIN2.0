@@ -1,6 +1,5 @@
-export interface Truck{
-    id:number
-    matricula:number;
-    num_serie: number;
-    routeTraveled: number;
+export interface Truck {
+    id?: string;
+    matricula: string;
+    numero_unidad: number;  
 }

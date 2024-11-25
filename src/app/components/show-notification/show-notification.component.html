@@ -1,0 +1,28 @@
+
+<h2 mat-dialog-title class="dialog-title">Notificaciones</h2>
+
+<mat-dialog-content class="dialog-content">
+
+@if (notifications.length ===0) {
+        <div>
+            <p>No hay notificaciones disponibles.</p>
+        </div>
+    }
+
+    @for (item of notifications; track $index) {
+        <div >
+            <div class="notification-item">
+              <h3>{{ item.titulo }}</h3>
+              <p>{{ item.texto }}</p>
+            </div>
+          </div>
+    }
+</mat-dialog-content>
+<div>
+    <mat-dialog-actions align="end">
+        <!-- Botón de Cerrar -->
+        <button mat-button mat-dialog-close (click)="close()" class="btn-close">Cerrar</button>
+      </mat-dialog-actions>
+</div>
+
+

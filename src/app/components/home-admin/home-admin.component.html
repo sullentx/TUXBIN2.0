@@ -1,57 +1,68 @@
-<div class="a">
-<app-header-admin></app-header-admin>
 
-<div class="container">
-    <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="initial-scale=1, width=device-width">
-    </head>
-    <body>
-    </body>
-  
-
-    <div class="menu">
-    <div class="sign-up">
-        <img class="chris-lee-70l1tdai6rm-unsplash-icon" alt="" src="chris-lee-70l1tDAI6rM-unsplash 1.png"> 
-  </div>
-
-   <button class="puntos" >
-      <img class="puntos-img" src="puntos.png" alt="puntos-img">
-      <p>Rutas</p>
-   </button>
-   
-   <button class="punto-recoleccion">
-      <img class="recoleccion-img" src="recoleccion.png" alt="recoleccion">
-      <div class="text">
-            <p>Puntos de Recoleccion</p>
-      </div>
+<div class="admin-dashboard">
+  <app-header-admin></app-header-admin>
+      <div class="dashboard-container">
+        <div class="sidebar">
+          <div class="logo-section">
+            <img src="TUXBIN.png" alt="Logo" class="logo">
+          </div>
+          
+          <nav class="nav-menu" >
+            <button class="nav-item active" (click)="rutas()">
+              <img src="puntos.png" alt="Rutas">
+              <span>Rutas</span>
+            </button>
+    
+            <button class="nav-item" (click)="irPuntos()">
+              <img src="recoleccion.png" alt="Puntos de Recolección">
+              <span>Puntos de Recolección</span>
+            </button>
+    
+            <button class="nav-item" (click)="irNotis()">
+              <div class="icon-with-badge">
+                <img src="Vector.png" alt="Notificaciones">
+              </div>
+              <span>Notificaciones</span>
+            </button>
+    
+            <button class="nav-item" (click)="irInfo()">
+              <img src="informacion.png" alt="Módulo de Información">
+              <span>Módulo de Información</span>
+            </button>
+    
+            <button class="nav-item" (click)="irACamiones()">
+              <img src="camion.png" alt="Camiones">
+              <span>Camiones</span>
+            </button>
+          </nav>
+        </div>
+    
+        <main class="main-content">
+          <div class="welcome-section">
+            <div class="welcome-text">
+              <h1>Bienvenido al Panel de Administración</h1>
+              <p>Gestiona tus rutas y puntos de recolección de manera eficiente</p>
+            </div>
+            <div class="stats-cards">
+              <div class="stat-card">
+                <h3>Total Rutas</h3>
+                <p class="stat-number">{{rutaCount.length}}</p>
+              </div>
+              <div class="stat-card">
+                <h3>Puntos Activos</h3>
+                <p class="stat-number">{{puntoCount.length}}</p>
+              </div>
+              <div class="stat-card">
+                <h3>Camiones</h3>
+                <p class="stat-number">{{truckCount}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="content-area">
+            <!-- Aquí irá el contenido específico de cada vista -->
+            <img class="dashboard-image" src="chris-lee-70l1tDAI6rM-unsplash 1.png" alt="Dashboard Image">
+          </div>
       
-   </button>
-   
-   <button class="notificaciones" (click)="irNotis()">
-      <img class="notificaciones-img" src="Vector.png" alt="notificaciones">
-      <div class="text">
-            <p>Notificaciones</p>
+        </main>
       </div>
-   </button>
-
-<button class="div-informacion" (click)="irInfo()">
-      <img class="informacion-img" src="informacion.png" alt="informacion">
-      <div class="text">
-            <p>Modulo de Informacion</p>
-      </div>
-      
-</button>
-
-<button class="div-camion" (click)="irACamiones()">
-      <img class="camion-img" src="camion.png" alt="camion">
-      <div class="text">
-            <p>Camiones</p>
-      </div>
-     
-</button>
-
-</div>
- 
-</div>
-</div>
+    </div>

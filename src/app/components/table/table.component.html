@@ -12,15 +12,12 @@
     </ng-container>
 
     <!-- Numero Serie Column -->
-    <ng-container matColumnDef="num_serie">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero de Serie</th>
-      <td mat-cell *matCellDef="let row">{{row.num_serie}}</td>
+    <ng-container matColumnDef="Numero de Unidad">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero de Unidad</th>
+      <td mat-cell *matCellDef="let row">{{row.numero_unidad}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="distancia">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Distancia</th>
-      <td mat-cell *matCellDef="let row">{{row.routeTraveled| formatKm }}</td>
-    </ng-container>
+
 
     <!-- Actions Column -->
     <ng-container matColumnDef="actions">
@@ -44,9 +41,6 @@
 
   <mat-paginator #paginator
       [length]="dataSource.data.length"
-      [pageIndex]="0"
-      [pageSize]="10"
-      [pageSizeOptions]="[5, 10, 20]"
       aria-label="Select page">
   </mat-paginator>
 </div>

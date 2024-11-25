@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { FormatTruckMatriculaPipe } from './format-truck-matricula.pipe'; // Asegúrate de que la ruta sea correcta
+import { FormatTruckMatriculaPipe } from './format-truck-matricula.pipe'; 
 import { FormatKmPipe } from './format-km-pipe.pipe';
+import { TimeRemainingPipe } from './timeReaming.pipe';
 @NgModule({
-  declarations: [FormatTruckMatriculaPipe,FormatKmPipe],
-  exports: [FormatTruckMatriculaPipe, FormatKmPipe] // Exporta la pipe para que se pueda usar en otros módulos
+  declarations: [FormatTruckMatriculaPipe,FormatKmPipe, TimeRemainingPipe],
+  exports: [FormatTruckMatriculaPipe, FormatKmPipe, TimeRemainingPipe] 
 })
 export class PipesModule {}

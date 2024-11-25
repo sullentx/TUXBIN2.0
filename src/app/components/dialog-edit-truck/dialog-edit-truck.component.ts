@@ -7,34 +7,40 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogContent } from '@angular/material/dialog';
 import { MatDialogActions } from '@angular/material/dialog';
 import { TruckService } from '../../services/truck.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-dialog-edit-truck',
   templateUrl: './dialog-edit-truck.component.html',
   styleUrls: ['./dialog-edit-truck.component.scss'],
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, FormsModule,MatDialogContent, MatDialogActions]  
+  imports: [MatFormFieldModule, MatInputModule, FormsModule, MatDialogContent, MatDialogActions]
 })
 export class DialogEditTruckComponent {
   constructor(
     public dialogRef: MatDialogRef<DialogEditTruckComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Truck, private truckService:TruckService) {}
+    @Inject(MAT_DIALOG_DATA) public data: Truck,
+    private truckService: TruckService,
+    private snackBar: MatSnackBar
+  ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-  onSave(): void {
-    this.truckService.updateTruck(this.data).subscribe({
-      next: (response) => {
-        console.log('Camión actualizado con éxito:', response);
-        this.dialogRef.close(); 
-      },
-      error: (error) => {
-        console.error('Error al actualizar el camión:', error);
-      }
-    });
-  }
-  onCancel():void{
-    this.dialogRef.close(); 
 
+  async onSave(): Promise<void> {
+    try {
+      // Llamada al servicio updateTruck (ahora asíncrona)
+      await this.truckService.updateTruck(this.data);
+      this.snackBar.open('Camión modificado con éxito', 'Cerrar', {
+        duration: 3000
+      });
+      this.dialogRef.close(); // Cerrar el diálogo después de guardar
+    } catch (error) {
+    }
+  }
+
+  onCancel(): void {
+    this.dialogRef.close();
   }
 }

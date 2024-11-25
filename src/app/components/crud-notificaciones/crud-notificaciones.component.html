@@ -1,18 +1,36 @@
-<div class="div-form">
-    <form> 
-        <p>Enviar Notifiacion</p>
-        <div class="div-titulo">
-            <label for="name">Titulo</label>
-            <input id="name" formControlName="matricula" placeholder="Suceso">
-        </div>
+<h2 mat-dialog-title class="dialog-title">Crear Comunicado</h2>
 
-        <div class="div-descripcion">
-            <label for="lastName" class="lb-descripcion">Descripcion De La Notifiacion</label>
-            <input id="lastName" formControlName="num_serie" placeholder="Descripcion" class="ipt-descripcion">
-        </div>
-        
-        <div class="div-guardar">
-            <button class="btn-guardar" type="submit">Guardar</button> 
-        </div>
-    </form>
-</div>
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="notificationForm">
+    <!-- Título -->
+    <div class="form-group">
+      <label for="name">Título de la Notificación</label>
+      <input id="name" formControlName="titulo" placeholder="Suceso" class="form-control">
+    </div>
+
+    <!-- Descripción -->
+    <div class="form-group">
+      <label>Descripción de la Notificación</label>
+      <textarea id="descripcion" formControlName="texto" placeholder="Descripción" class="form-control ipt-descripcion"></textarea>
+    </div>
+
+    <!-- Duración de la Notificación -->
+    <div class="form-group">
+      <label for="duracion">Duración de la Notificación</label>
+      <mat-select id="duracion" formControlName="tiempo_activo" class="form-control">
+          <mat-option value="1">1 hora</mat-option>
+          <mat-option value="2">2 horas</mat-option>
+          <mat-option value="6">6 horas</mat-option>
+          <mat-option value="12">12 horas</mat-option>
+          <mat-option value="24">24 horas</mat-option>
+          <mat-option value="48">48 horas</mat-option>
+          <mat-option value="72">72 horas</mat-option>
+      </mat-select>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions" align="end">
+  <button mat-button mat-dialog-close class="btn-cancel" (click)="close()">Cerrar</button>
+  <button mat-raised-button color="primary" (click)="save()" class="btn-guardar">Guardar</button>
+</mat-dialog-actions>

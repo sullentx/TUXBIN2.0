@@ -1,7 +1,68 @@
-.tabla{
+/* Estilo general para el contenedor */
+.contenedor {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+    gap: 20px; /* Espacio entre el formulario y la tabla */
+    margin: 20px;
+    justify-content: space-between; /* Distribuir espacio entre los elementos */
+    align-items: flex-start; /* Alinear los elementos al inicio vertical */
+  }
+  
+  /* Estilo para el formulario */
+  .formulario {
     position: relative;
-    max-width: 800px;
-    max-height: 900px;
-    bottom: 1300px;
-    left: 800px;
-}
+    top: 100px;
+    flex: 1; /* Ocupa el 50% del ancho disponible */
+    min-width: 300px; /* Ancho mínimo para pantallas pequeñas */
+    max-width: 400px; /* Ancho máximo */
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff; 
+    position: relative;
+    /* Fondo blanco para destacar el formulario */
+  }
+  
+  /* Estilo para la tabla */
+  .tabla {
+    position: relative;
+    top: 100px;
+    flex: 2; /* Ocupa el 50% del ancho o más si hay espacio */
+    min-width: 300px; /* Ancho mínimo para pantallas pequeñas */
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff; /* Fondo blanco para destacar la tabla */
+  }
+  
+  /* Responsividad */
+  @media screen and (max-width: 768px) {
+    .contenedor {
+      flex-direction: column; /* Apilar elementos en pantallas pequeñas */
+    }
+  
+    .formulario, .tabla {
+      flex: 1; /* Ambos ocupan el mismo espacio */
+      max-width: none; /* Deshabilitar ancho máximo para ocupar todo el espacio */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .contenedor {
+      gap: 10px; /* Reducir el espacio entre elementos */
+    }
+  
+    .formulario, .tabla {
+      padding: 5px; /* Reducir el padding para pantallas pequeñas */
+    }
+  }
+  
+  .formulario, .tabla {
+    margin: 0; /* Eliminar márgenes */
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%; /* Para garantizar que use todo el alto disponible */
+  }
+  
