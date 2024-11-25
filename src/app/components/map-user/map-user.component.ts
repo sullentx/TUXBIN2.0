@@ -8,11 +8,13 @@ import { PuntoListaComponent } from '../punto-lista/punto-lista.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import Ruta from '../../models/Ruta';
 import * as turf from '@turf/turf';
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-map',
   standalone: true,
-  imports: [PuntoListaComponent,ReactiveFormsModule],
+  imports: [PuntoListaComponent, ReactiveFormsModule, HeaderComponent, FooterComponent],
   templateUrl: './map-user.component.html',
   styleUrls: ['./map-user.component.scss']
 })

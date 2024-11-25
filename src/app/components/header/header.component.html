@@ -49,6 +49,13 @@
                 </button>
             </li>
         }
+
+        <li>
+            <button (click)="openNotifications()">
+                <img alt="Notificaciones" src="Vector.png">
+                <span>Notificaciones</span>
+            </button>
+        </li>
      
     @if (!isLoggedIn) {
         <li>
@@ -59,6 +66,8 @@
          </li>
     }
      
+    
+   
     <li>
         <button class="btn-iniciar" (click)="goInfo()">
              <img class="user" alt="Iniciar sesión" src="informacion.png">

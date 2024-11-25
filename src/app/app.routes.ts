@@ -25,7 +25,7 @@ export const routes: Routes = [
   { path: 'notificaciones', component: SectionCrudNotificacionesComponent, canActivate: [AuthGuard] },
   { path: 'informacion', component: SectionCrudInformacionComponent },
   { path: 'home', component: SectionHomeComponent },
-  { path: 'somosTuxbin', component: SectionNosotrosComponent, canActivate: [AuthGuard] },
+  { path: 'somosTuxbin', component: SectionNosotrosComponent},
   { path: 'TuxBinInformate', component:ContentPageComponent },
   { path: 'TuxMapaAdmin', component:MapComponent, canActivate: [AuthGuard],},
   { path: 'TuxMapa', component:MapUserComponent, canActivate: [AuthGuard],},

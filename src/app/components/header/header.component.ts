@@ -36,6 +36,10 @@ export class HeaderComponent implements OnInit{
     this.route.navigate(['/TuxBinInformate']);
 
   }
+  nosotros(){
+    this.route.navigate(['/somosTuxbin']);
+
+  }
   goMapa(){
     if(this.localStoreService.hasToken()){
       this.route.navigate(['/TuxMapa']);

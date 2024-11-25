@@ -58,6 +58,7 @@ body {
   text-align: start;
   padding-left: 25px;
   animation: slideIn 1.5s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 
   p {
     font-size: xx-large;
@@ -70,6 +71,14 @@ body {
     width: 100%;
     max-width: 70px;
   }
+}
+.rute:hover {
+  cursor: pointer;
+  transform: translateY(-10px); /* Elevar botón */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+  border-radius: 10px;
+    background-color: rgb(224, 228, 220);
+
 }
 
 .tuxmapa {
