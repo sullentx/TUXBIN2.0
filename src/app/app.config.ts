@@ -12,12 +12,11 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes), 
     provideHttpClient(withInterceptors([TokenInterceptor])),
     provideAnimationsAsync(),
-      // Registra MaterialService aquí
 
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
-      multi: true, //para mas interceptors
+      multi: true, 
       
     },
     

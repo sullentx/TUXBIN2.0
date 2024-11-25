@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="map-container">
+      <!-- Mapa -->
+      <div #mapDiv class="map"></div>
+
+      <!-- Panel lateral -->
+      <div class="side-panel">
+        <!-- Lista de puntos -->
+        <div class="punto-lista-container">
+          <div class="panel-header">
+            <h2>Puntos de Recolección</h2>
+          </div>
+          <app-punto-lista [puntos]="puntosGuardados"></app-punto-lista>
+        </div>
+
+        <!-- Leyenda -->
+        <div class="legend">
+          <div class="legend-header">
+            <h3>Días de Recolección</h3>
+          </div>
+          <div class="legend-content">
+            @for (dia of diasSemana; track $index) {
+                <div class="legend-item">
+                    <div class="legend-color-container">
+                      <div class="legend-color" [style.background-color]="dia.color"></div>
+                    </div>
+                    <span class="legend-text">{{ dia.nombre }}</span>
+                  </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

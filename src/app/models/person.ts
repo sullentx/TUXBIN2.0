@@ -1,5 +1,4 @@
 export interface Person{
-    id_usuario: number;
     first_name:string,
     last_name:string,
     correo:string,
