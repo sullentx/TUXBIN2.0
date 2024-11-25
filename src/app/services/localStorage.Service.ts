@@ -13,19 +13,14 @@ export class LocalStorageService {
     try {
       // Asegurarnos de que expiresAt sea un número válido
       if (!expiresAt || isNaN(expiresAt)) {
-        console.error('Tiempo de expiración inválido:', expiresAt);
         return;
       }
 
       localStorage.setItem(this.TOKEN_KEY, token);
       localStorage.setItem(this.EXPIRES_AT_KEY, expiresAt.toString());
       
-      console.log('Token y expiración guardados:', {
-        token: token.substring(0, 10) + '...',
-        expiresAt: expiresAt
-      });
+   
     } catch (error) {
-      console.error('Error al guardar el token:', error);
     }
   }
 
@@ -38,29 +33,21 @@ export class LocalStorageService {
       const expiresAt = localStorage.getItem(this.EXPIRES_AT_KEY);
       
       if (!expiresAt) {
-        console.log('No hay tiempo de expiración guardado');
         return true;
       }
 
       const expirationTime = parseInt(expiresAt);
       
       if (isNaN(expirationTime)) {
-        console.log('Tiempo de expiración inválido');
         return true;
       }
 
       const currentTime = Date.now();
 
-      console.log({
-        currentTime,
-        expirationTime,
-        difference: expirationTime - currentTime,
-        minutesRemaining: Math.floor((expirationTime - currentTime) / 1000 / 60)
-      });
+    
 
       return currentTime >= expirationTime;
     } catch (error) {
-      console.error('Error al verificar la expiración:', error);
       return true;
     }
   }
@@ -73,18 +60,12 @@ export class LocalStorageService {
       localStorage.removeItem('name');
       localStorage.removeItem('id');
     } catch (error) {
-      console.error('Error al remover el token:', error);
     }
   }
 
   hasToken(): boolean {
     const token = this.getToken();
     const isExpired = this.isTokenExpired();
-
-    console.log('Verificación de token:', {
-      hasToken: !!token,
-      isExpired: isExpired
-    });
 
     if (!token || isExpired) {
       this.removeToken();

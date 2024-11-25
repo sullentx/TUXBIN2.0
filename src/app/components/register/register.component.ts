@@ -37,12 +37,10 @@ export class RegisterComponent {
       setTimeout(() => {
         this.personService.postPerson(person).subscribe({
           next: (response) => {
-            console.log('Usuario registrado:', response);
             this.snackBar.open('Te Registraste Correctamente', 'Cerrar', { duration: 3000, });
             this.router.navigate(['/login']); 
           },
           error: (error) => {
-            console.error('Error al registrar:', error);
           this.snackBar.open('Ocurrió un error al registrarse. Por favor, inténtalo de nuevo.', 'Cerrar', { duration: 3000,});
           },
           complete: () => {

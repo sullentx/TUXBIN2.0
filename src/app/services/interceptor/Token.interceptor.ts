@@ -17,7 +17,6 @@ export const TokenInterceptor: HttpInterceptorFn = (req, next) => {
       catchError((error: HttpErrorResponse) => {
         // Manejar errores para rutas públicas
         if (error.status === 401) {
-          console.warn('Error 401 en ruta pública:', req.url);
         }
         return throwError(() => error);
       })

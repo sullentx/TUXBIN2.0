@@ -40,7 +40,6 @@ export class CrudInformacionComponent {
     const file: File = event.target.files[0];
     if (file) {
       this.selectedFile = file;
-      console.log('Archivo seleccionado:', file);
     }
   } 
   close(): void {
@@ -67,7 +66,6 @@ export class CrudInformacionComponent {
 
     this.materialService.createMaterial(material, this.selectedFile).subscribe({
       next: (response) => {
-        console.log('Material creado con éxito:', response);
         this.snackBar.open('Material creado exitosamente', 'Cerrar', {
           duration: 2000,
         });
@@ -75,7 +73,6 @@ export class CrudInformacionComponent {
         this.dialogRef.close(true);
       },
       error: (error) => {
-        console.error('Error al crear material:', error);
         this.snackBar.open('Error al crear material informativo', 'Cerrar', {
           duration: 2000,
         });

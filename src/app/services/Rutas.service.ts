@@ -15,4 +15,10 @@ export class RutaService {
   createRuta(ruta: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, ruta);
   }
+
+  getRutas(): Observable<Ruta[]> {
+    return this.http.get<Ruta[]>(this.apiUrl);
+  }
+
+  
 }

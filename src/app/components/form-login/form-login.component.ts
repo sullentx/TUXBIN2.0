@@ -45,7 +45,6 @@ export class FormLoginComponent {
       setTimeout(() => {
         this.personService.postLogin(personlog).subscribe({
           next: () => {
-            console.log(this.local.hasToken())
             const rol= this.local.getItem('rol')
             if(rol == '1'){
               this.router.navigate(['/adminHome']);
@@ -61,7 +60,6 @@ export class FormLoginComponent {
             }
           },
           error: (err) => {
-            console.error('Error en el inicio de sesión:', err);
             this.snackBar.open('Error en el inicio de sesión. Por favor, comprueba tus credenciales.', 'Cerrar', {
               duration: 3000,
             });

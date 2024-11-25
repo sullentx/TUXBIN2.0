@@ -9,7 +9,6 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 import PuntoRecoleccion from '../../models/puntoRecoleccion';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UpperCasePipe } from '@angular/common';
-import { PuntoListaComponent } from "../punto-lista/punto-lista.component";
 @Component({
   selector: 'app-map',
   standalone: true,
@@ -113,7 +112,6 @@ export class MapComponent implements OnInit, AfterViewInit {
         });
       },
       (error) => {
-        console.error('Error al eliminar el punto:', error);
         
         this.snackBar.open('Hubo un error al eliminar el punto', 'Cerrar', {
           duration: 3000,
@@ -234,7 +232,6 @@ export class MapComponent implements OnInit, AfterViewInit {
   
       this.puntoRecoleccionService.createPuntoRecoleccion(punto).subscribe(
         (response) => {
-          console.log('Punto guardado exitosamente', response);
   
           this.puntosGuardados.push(response);  
   
@@ -250,7 +247,6 @@ export class MapComponent implements OnInit, AfterViewInit {
           });
         },
         (error) => {
-          console.error('Error al guardar el punto', error);
   
           this.snackBar.open('Hubo un error al agregar el punto', 'Cerrar', {
             duration: 3000,

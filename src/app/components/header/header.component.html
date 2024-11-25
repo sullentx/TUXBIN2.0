@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
@@ -6,49 +5,79 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" />
 </head>
 <body>
-    <div class="header">
-		<div class="div-iniciar">
-        <button class="btn-iniciar">
-            <img class="user" alt="Iniciar sesión" src="user.png">
-            <span>Iniciar sesión</span>
-        </button>
-	</div>
+<header>
+<div class="back"></div>
+<div class="menu container">
+<input type="checkbox" id="menu"/>
 
-	<div class="div-registro">
-        <button class="btn-registro">
-            <img class="userPlus" alt="Registrarse" src="user-plus.png">
-            <span>Regístrate</span>
-        </button>
-	</div>
+<label for="menu">
+    <img src="menu.png" class="menu-icono" alt="">
+</label>
 
-	<div class="div-home">
+<nav class="navbar">
+<ul>
+    <li>
         <button class="btn-home" (click)="irAhome()">
             <img class="home" alt="Home" src="iconamoon_home.png">
             <span>Home</span>
         </button>
-	</div>
+    </li>
 
-    <div class="div-notifiacion">
-        <button class="btn-iniciar" (click)="openNotifications()">
-            <img class="user" alt="Notificaciones" src="Vector.png">
-            <span>Notificaciones</span>
-            <!-- Indicador de notificaciones -->
-             @if (hasNotifications) {
-                <div class="notification-badge"></div> <!-- Badge solo si hay notificaciones -->
-             }
-        </button>
-    </div>
-    
-    
-	
-	<div class="div-mapa">
-        <button class="btn-mapa">
+    @if (!isLoggedIn) {
+        <li>
+            <button class="btn-iniciar" (click)="openNotifications()">
+                <img class="user" alt="Notificaciones" src="Vector.png">
+                <span>Notificaciones</span>
+                 @if (hasNotifications) {
+                    <div class="notification-badge"></div> <!-- Badge solo si hay notificaciones -->
+                 }
+    </button>
+        </li>
+    }
+
+    <li>
+        <button class="btn-mapa" (click)="goMapa()">
             <img class="mapa" alt="Mapa" src="lets-icons_map-fill.png">
             <span>Mapa</span>
         </button>
-	</div>
-    <div class="line-div"></div>
+        </li>
+        @if (!isLoggedIn) {
+            <li>
+                <button class="btn-registro" (click)="goRegister()">
+                    <img class="userPlus" alt="Registrarse" src="user-plus.png">
+                    <span>Regístrate</span>
+                </button>
+            </li>
+        }
+
+        <li>
+            <button (click)="openNotifications()">
+                <img alt="Notificaciones" src="Vector.png">
+                <span>Notificaciones</span>
+            </button>
+        </li>
+     
+    @if (!isLoggedIn) {
+        <li>
+            <button class="btn-iniciar" (click)="goLogin()">
+                 <img class="user" alt="Iniciar sesión" src="user.png">
+                 <span>Iniciar sesión</span>
+             </button> 
+         </li>
+    }
+     
+    
+   
+    <li>
+        <button class="btn-iniciar" (click)="goInfo()">
+             <img class="user" alt="Iniciar sesión" src="informacion.png">
+             <span>Comunicados</span>
+         </button> 
+     </li>
+
+</ul>
+</nav>
 </div>
-
+    </header>
+    <div class="line-div"></div>
 </body>
-

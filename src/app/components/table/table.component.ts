@@ -72,7 +72,6 @@ export class TableComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogDeleteTruckComponent, {
       data: truck,
     });
-    console.log('Intentando eliminar camión con ID:', truck.id);
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
@@ -91,7 +90,10 @@ export class TableComponent implements OnInit {
       const data = await this.truckService.getTruckById(truck.id|| ''); // Ahora retorna un Truck
       this.openDetailsDialog(data); // Pasar el Truck al diálogo
     } catch (error) {
-      console.error('Error al obtener detalles del camión:', error);
+      this.snackBar.open('Error al obtener el camion', 'Cerrar', {
+        duration: 3000, // Duración en milisegundos
+      });
+
     }
   }
   

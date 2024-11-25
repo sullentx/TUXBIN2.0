@@ -38,7 +38,6 @@ postLogin(person: PersonLog): Observable<LoginResponse> {
         // Asegurarnos de que expires_at sea un número
         const expirationTime = parseInt(response.expires_at.toString());
         
-        console.log('Tiempo de expiración recibido:', expirationTime);
         
         // Guardar el token y la expiración
         this.localStorage.setToken(response.access_token, expirationTime);
@@ -47,7 +46,6 @@ postLogin(person: PersonLog): Observable<LoginResponse> {
         this.localStorage.setItem('id', response.id);
         
         // Verificar que se guardó correctamente
-        console.log('Tiempo guardado:', this.localStorage.getItem('expires_at'));
       }
     })
   );
