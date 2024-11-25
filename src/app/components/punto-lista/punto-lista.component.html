@@ -1,0 +1,14 @@
+<div class="puntos-list">
+    @for (item of puntos; track $index) {
+      <div class="punto-card">
+        <div class="card-header">
+          <h3>📍 {{ item?.colonia | uppercase }}</h3>
+        </div>
+        <div class="card-body">
+          <p><span>📮 CP:</span> <span>{{ item?.cp }}</span></p>
+          <p><span>🏠 Calle:</span> <span>{{ item?.calle | uppercase }}</span></p>
+          <p><span>🆔 ID:</span> <span>{{ item?.id }}</span></p>
+        </div>
+      </div>
+    }
+  </div>

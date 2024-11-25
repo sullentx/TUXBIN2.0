@@ -9,6 +9,9 @@ import { SectionHomeComponent } from './components/section-home/section-home.com
 import { SectionNosotrosComponent } from './components/section-nosotros/section-nosotros.component';
 import { AuthGuard } from './components/custom/auth.guard';
 import { ContentPageComponent } from './components/content-page/content-page.component';
+import { MapComponent } from './components/map/map.component';
+import { MapUserComponent } from './components/map-user/map-user.component';
+import { RutasComponent } from './components/rutas/rutas.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, 
@@ -21,6 +24,11 @@ export const routes: Routes = [
   { path: 'home', component: SectionHomeComponent, canActivate: [AuthGuard] },
   { path: 'somosTuxbin', component: SectionNosotrosComponent, canActivate: [AuthGuard] },
   { path: 'TuxBinInformate', component:ContentPageComponent , canActivate: [AuthGuard] },
+  { path: 'TuxMapaAdmin', component:MapComponent, canActivate: [AuthGuard],},
+  { path: 'TuxMapa', component:MapUserComponent, canActivate: [AuthGuard],},
+  { path: 'TuxRutas', component:RutasComponent, canActivate: [AuthGuard],},
+
+
   { path: '**', redirectTo: 'login' } 
 ];
 

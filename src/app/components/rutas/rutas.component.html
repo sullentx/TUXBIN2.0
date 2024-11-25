@@ -1,0 +1,27 @@
+<div>
+    <form [formGroup]="rutaForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="nombre">Nombre de la Ruta</label>
+        <input id="nombre" formControlName="nombre_de_ruta" />
+      </div>
+      <div>
+        <label for="camion">Camión</label>
+        <select id="camion" formControlName="id_camion">
+            @for (item of camiones; track $index) {
+                <option  [value]="item.id">{{ item.nombre }}</option>
+
+            }
+        </select>
+      </div>
+      <div>
+        <label for="puntos">Puntos de Recolección</label>
+        <select id="puntos" formControlName="id_puntos_recoleccion" multiple>
+            @for (item of puntos; track $index) {
+                <option [value]="item.id">{{ item.nombre }}</option>
+            }
+        </select>
+      </div>
+      <button type="submit">Crear Ruta</button>
+    </form>
+  </div>
+  
