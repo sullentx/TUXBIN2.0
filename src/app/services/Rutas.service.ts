@@ -12,7 +12,7 @@ export class RutaService {
 
   constructor(private http: HttpClient) {}
 
-  crearRuta(ruta: Ruta): Observable<Ruta> {
-    return this.http.post<Ruta>(this.apiUrl, ruta);
+  createRuta(ruta: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, ruta);
   }
 }

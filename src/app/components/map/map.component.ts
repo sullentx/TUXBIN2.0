@@ -98,7 +98,6 @@ export class MapComponent implements OnInit, AfterViewInit {
         .setLngLat(coordinates)
         .addTo(this.map);
   
-   
     });
   }
   
