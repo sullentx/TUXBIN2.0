@@ -6,7 +6,7 @@ import PuntoRecoleccion from '../models/puntoRecoleccion';
   providedIn: 'root'
 })
 export class PuntoRecoleccionService {
-  private apiUrl = 'http://127.0.0.1:8000/puntos_recoleccion';
+  private apiUrl = 'https://tuxbinapi.integrador.xyz/puntos_recoleccion';
 
   constructor(private http: HttpClient) {}
 

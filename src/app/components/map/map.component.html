@@ -1,4 +1,6 @@
-
+<div>
+  <app-header-admin></app-header-admin>
+</div>
 <div class="container">
   <div class="map-container">
     <div #mapDiv class="map"></div>
@@ -26,31 +28,23 @@
       </div>
 
       <input 
-        formControlName="nombre" 
-        placeholder="📝 Nombre del punto" 
-        class="form-control">
+      type="number" 
+      formControlName="CP" 
+      placeholder="📮 Código Postal" 
+      class="form-control">
       
-      <textarea 
-        formControlName="descripcion" 
-        placeholder="✏️ Descripción" 
-        class="form-control"
-        rows="3"></textarea>
-      
-      <input 
-        formControlName="Calle" 
-        placeholder="🏠 Calle" 
-        class="form-control">
+   
       
       <input 
         formControlName="Colonia" 
         placeholder="🏘️ Colonia" 
         class="form-control">
       
-      <input 
-        type="number" 
-        formControlName="CP" 
-        placeholder="📮 Código Postal" 
+           <input 
+        formControlName="Calle" 
+        placeholder="🏠 Calle" 
         class="form-control">
+    
 
       <select 
         formControlName="id_DiaRecoleccion" 

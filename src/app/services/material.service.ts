@@ -8,7 +8,7 @@ import { Material } from '../models/material';
 })
 export class MaterialService {
 
-  private url: string = 'http://127.0.0.1:8000'; 
+  private url: string = 'https://tuxbinapi.integrador.xyz'; 
 
   constructor(private http: HttpClient) {}
 

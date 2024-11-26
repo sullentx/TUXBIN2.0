@@ -73,6 +73,7 @@ export class CrudInformacionComponent {
         this.dialogRef.close(true);
       },
       error: (error) => {
+        console.log(error)
         this.snackBar.open('Error al crear material informativo', 'Cerrar', {
           duration: 2000,
         });

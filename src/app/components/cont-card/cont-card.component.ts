@@ -29,7 +29,6 @@ export class ContCardComponent implements OnInit {
     });
   }
 
-  // Método para recibir el material creado desde el componente hijo
   onMaterialCreated(newMaterial: Material): void {
     this.items.push(newMaterial); // Agregar el nuevo material a la lista de 
   }

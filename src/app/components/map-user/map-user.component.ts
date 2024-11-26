@@ -160,7 +160,7 @@ export class MapUserComponent implements OnInit, AfterViewInit {
   }
 
   private obtenerRutas(): void {
-    this.http.get<any[]>('http://127.0.0.1:8000/rutas').subscribe(rutas => {
+    this.http.get<any[]>('https://tuxbinapi.integrador.xyz/rutas').subscribe(rutas => {
       this.rutas = rutas; // Guardar las rutas en un array
     });
   }
