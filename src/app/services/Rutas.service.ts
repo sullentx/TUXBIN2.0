@@ -8,7 +8,7 @@ import Ruta from '../models/Ruta';
   providedIn: 'root'
 })
 export class RutaService {
-  private apiUrl = 'http://127.0.0.1:8000/rutas'; 
+  private apiUrl = 'https://tuxbinapi.integrador.xyz/rutas'; 
 
   constructor(private http: HttpClient) {}
 

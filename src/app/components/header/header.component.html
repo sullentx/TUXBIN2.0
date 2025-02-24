@@ -23,7 +23,7 @@
         </button>
     </li>
 
-    @if (!isLoggedIn) {
+    @if (isLoggedIn) {
         <li>
             <button class="btn-iniciar" (click)="openNotifications()">
                 <img class="user" alt="Notificaciones" src="Vector.png">
@@ -41,6 +41,7 @@
             <span>Mapa</span>
         </button>
         </li>
+
         @if (!isLoggedIn) {
             <li>
                 <button class="btn-registro" (click)="goRegister()">
@@ -49,13 +50,6 @@
                 </button>
             </li>
         }
-
-        <li>
-            <button (click)="openNotifications()">
-                <img alt="Notificaciones" src="Vector.png">
-                <span>Notificaciones</span>
-            </button>
-        </li>
      
     @if (!isLoggedIn) {
         <li>

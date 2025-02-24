@@ -9,7 +9,7 @@ import { firstValueFrom } from 'rxjs';
   providedIn: 'root'
 })
 export class TruckService {
-  private url: string = 'http://127.0.0.1:8000/';
+  private url: string = 'https://tuxbinapi.integrador.xyz/';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   private store = inject(TruckStore);
 

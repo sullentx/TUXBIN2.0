@@ -8,7 +8,7 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class NotificationService {
-  private apiUrl = 'http://127.0.0.1:8000/notificaciones'; 
+  private apiUrl = 'https://tuxbinapi.integrador.xyz/notificaciones'; 
 
   constructor(private http: HttpClient) {}
 

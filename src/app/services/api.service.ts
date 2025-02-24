@@ -18,7 +18,7 @@ interface LoginResponse {
 export class ApiService {
   
 
-  private url: string = 'http://127.0.0.1:8000'
+  private url: string = 'https://tuxbinapi.integrador.xyz'
  
   
   private headers = new HttpHeaders().set('Content-Type','application/json');

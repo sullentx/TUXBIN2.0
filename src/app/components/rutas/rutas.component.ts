@@ -7,10 +7,11 @@ import { LocationService } from '../../services/interceptor/Geolocalizacion.inte
 import { FormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UpperCasePipe } from '@angular/common';
+import { HeaderAdminComponent } from "../header-admin/header-admin.component";
 @Component({
   selector: 'app-rutas',
   standalone: true,
-  imports: [UpperCasePipe,FormsModule],
+  imports: [UpperCasePipe, FormsModule, HeaderAdminComponent],
   templateUrl: './rutas.component.html',
   styleUrls: ['./rutas.component.scss']
 })

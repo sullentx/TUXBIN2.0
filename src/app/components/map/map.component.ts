@@ -9,10 +9,12 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 import PuntoRecoleccion from '../../models/puntoRecoleccion';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UpperCasePipe } from '@angular/common';
+import { HeaderComponent } from "../header/header.component";
+import { HeaderAdminComponent } from "../header-admin/header-admin.component";
 @Component({
   selector: 'app-map',
   standalone: true,
-  imports: [ReactiveFormsModule, UpperCasePipe],
+  imports: [ReactiveFormsModule, UpperCasePipe, HeaderAdminComponent],
   templateUrl:'./map.component.html',
   styleUrl: './map.component.scss'
 })
@@ -40,11 +42,9 @@ export class MapComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.puntoForm = this.fb.group({
       search: [''],
-      nombre: ['', Validators.required],
-      descripcion: ['', Validators.required],
-      Calle: ['', Validators.required],
-      Colonia: ['', Validators.required],
       CP: [null, [Validators.required, Validators.min(10000), Validators.max(99999)]],
+      Colonia: ['', Validators.required],
+      Calle: ['', Validators.required],
       id_DiaRecoleccion: ['', Validators.required]
       
     });
@@ -128,7 +128,7 @@ export class MapComponent implements OnInit, AfterViewInit {
   private initializeMap(coords: [number, number]): void {
     this.map = new mapboxgl.Map({
       container: this.mapDivElement.nativeElement,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/outdoors-v12',
       center: coords,
       zoom: 12
     });
@@ -185,8 +185,10 @@ export class MapComponent implements OnInit, AfterViewInit {
   private extractAddressComponents(result: any, context: any[]): any {
     const address: any = {};
     
+    // Try to get street name
     address.street = result.address ? `${result.address} ${result.text}` : result.text;
     
+    // Extract neighborhood (colonia) and postal code from context
     context.forEach((item: any) => {
       if (item.id.startsWith('neighborhood')) {
         address.neighborhood = item.text;
@@ -197,7 +199,6 @@ export class MapComponent implements OnInit, AfterViewInit {
     
     return address;
   }
-
   private reverseGeocode(coords: [number, number]): void {
     const accessToken = 'pk.eyJ1Ijoic3VsbGVudHgiLCJhIjoiY20zc3Vwcmp0MDEzODJtcHd0dm1zaXd0ZSJ9.uYiciu2hW8JyGW2UJk30ig';
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${coords[0]},${coords[1]}.json?access_token=${accessToken}`;
@@ -206,15 +207,17 @@ export class MapComponent implements OnInit, AfterViewInit {
       if (response.features && response.features.length > 0) {
         const result = response.features[0];
         const address = this.extractAddressComponents(result, result.context || []);
-        
+        console.log(result.context)
         this.puntoForm.patchValue({
           Calle: address.street || '',
-          Colonia: address.neighborhood || '',
+          Colonia: address.city || '',
           CP: address.postalCode || ''
         });
       }
     });
   }
+
+  
   guardarPunto(): void {
     if (this.puntoForm.valid && this.selectedCoordinates) {
       const geojson = {

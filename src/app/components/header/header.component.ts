@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit{
-  hasNotifications: boolean = false; // Para indicar si hay notificaciones
+  hasNotifications: boolean = false; 
 
   constructor(private route:Router,public dialog: MatDialog,private notificationService: NotificationService, private localStoreService: LocalStorageService, private snackBar:MatSnackBar){}
   isLoggedIn: boolean = false
@@ -50,6 +50,7 @@ export class HeaderComponent implements OnInit{
     }
 
   }
+
   ngOnInit() {
     this.checkNotifications();
     this.isLoggedIn = this.localStoreService.hasToken();

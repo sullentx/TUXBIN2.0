@@ -2,12 +2,12 @@
   <form [formGroup]="form" (ngSubmit)="save()">
     <!-- Título -->
     <div class="form-group">
-      <label for="titulo">Título de la Notificación</label>
+      <label for="titulo">Título del Comunicado</label>
       <input id="titulo" formControlName="titulo" placeholder="Suceso" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="descripcion">Descripción de la Notificación</label>
+      <label for="descripcion">Descripción del Comunicado</label>
       <textarea id="descripcion" formControlName="descripcion" class="form-control ipt-descripcion"></textarea>
       @if (form.controls['descripcion'].hasError('maxlength') && form.controls['descripcion'].touched) {
         <div>
